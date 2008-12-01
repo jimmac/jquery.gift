@@ -10,11 +10,13 @@
     $(this).each(function () {
       //replace the image with a blank we'll animate
 
-      var img = Object;
+      var img = new Object;
       img.width = $(this).attr('width');
       img.height = $(this).attr('height');
       img.delay = 100; //100ms by default
       img.src = $(this).attr('src');
+      $(this).removeAttr('width'); //unset width to measure complete width
+      img.totalwidth = $(this).width();
       $(this).attr('src',blank).css('background','url(' + img.src + ') no-repeat 0 0');
       //FIXME: use actual image height and assume square if no explicit attributes exist.
       //FIXME: need actual image width to get max offset value
@@ -25,6 +27,7 @@
         var offset_x = offset.match(/([-]?[0-9]*)px ([-]?[0-9]*)px/)[1]; //integer
         var newoffset_x = offset_x - img.width;
         //FIXME: check for max offset
+        newoffset_x = (newoffset_x<=-img.totalwidth)? 0 : newoffset_x;
         $(image).css('background-position', newoffset_x + "px 0");
       },img.delay);
     });
