@@ -9,15 +9,17 @@
                   AAAAAAUABQAQAQV8MlJq7046827/2AojmRpnmiqrmYEADs=";
     $(this).each(function () {
       //replace the image with a blank we'll animate
-
+      //console.info(this)
       var img = new Object;
-      img.width = $(this).attr('width');
-      img.height = $(this).attr('height');
+      img.width = $(this).width();
+      img.height = $(this).height();
+      console.log(img.width,img.height);
       img.delay = 100; //100ms by default
       img.src = $(this).attr('src');
-      $(this).removeAttr('width'); //unset width to measure complete width
+      $(this).removeAttr('width').removeAttr('height'); //unset width to measure complete width
       img.totalwidth = $(this).width();
-      $(this).attr('src',blank).css('background','url(' + img.src + ') no-repeat 0 0');
+      $(this).attr('src',blank).css({background: 'url(' + img.src + ') no-repeat 0 0', 
+                                     width: img.width, height: img.height});
       //FIXME: use actual image height and assume square if no explicit attributes exist.
       //FIXME: need actual image width to get max offset value
       //FIXME: read delay from the rel

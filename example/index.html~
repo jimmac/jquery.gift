@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>GIFT is for ttttttttsomepejorative</title>
+  <script src="file:///home/jimmac/src/cvs/novell/builder.local/ui-server/public/javascripts/jquery-1.2.6.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+  <script src="../jquery.gift.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+</head>
+<body style="background-color: #000; color: #fff;">
+  <h1>GIFT Test</h1>
+  <h2>Correct</h2>
+  <img alt="" rel="animated 100" width="48" height="48" src="spinner.png">
+  <h2>Broken &ndash; cannot scale background</h2>
+  <img alt="" rel="animated 100" width="96" height="96" src="spinner.png">
+  <h2>FIXME &ndash; should be able to omit height </h2>
+  <img alt="" rel="animated" width="48" src="spinner.png">
+  <h2>FIXME &ndash; should be able to provide dimensions with CSS</h2>
+  <p>Really have no clue why this doesn't work</p> 
+  <img alt="" rel="animated" style="width: 48px; height: 48px;" src="spinner.png">
+</body>
+</html>
