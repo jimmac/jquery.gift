@@ -1,5 +1,5 @@
-GIFT: GIF Is For T*
-===================
+GIFT: GIFT Is For T*
+====================
 
 GIFT is a jQuery plugin to use tiled image as animations. It is useful
 whereever a PNG is better than a GIF. Using this plugin enables you to take
