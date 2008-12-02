@@ -1,5 +1,3 @@
-***FIXME**: General info here.*
-
 GIFT: GIF Is For T*
 ===================
 
@@ -9,10 +7,9 @@ advantage of PNGs for true-color RGBA animations.
 
 
 Creating tiled images
-=====================
+---------------------
 
-Imagemagick / graphicsmagick
-----------------------------
+### Imagemagick / graphicsmagick
 
 On unix-like systems, you can use Imagemagick or Graphicsmagick package to
 generate the tiled image out of your frames or MNG animation:
