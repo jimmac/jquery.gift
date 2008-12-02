@@ -1,0 +1,16 @@
+TODO
+====
+
+* Extend the API
+  - start animation
+  - stop animation
+  - speed (to adjust the speed)
+  - probably remove too?
+* More examples
+* Test on multiple browsers
+  - Firefox 3
+  - Firefox 2
+  - WebKit/Safari
+  - Opera
+  - IE7
+  - IE6 (Does the data URL work here? PNGs don't, normally!)
