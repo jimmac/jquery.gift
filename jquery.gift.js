@@ -9,29 +9,27 @@
                   AAAAAAUABQAQAQV8MlJq7046827/2AojmRpnmiqrmYEADs=";
     $(this).each(function () {
       //replace the image with a blank we'll animate
-      //console.info(this)
-      var img = new Object;
-      img.width = $(this).width();
-      img.height = $(this).height();
-      console.log(img.width,img.height);
+      var width = $(this).width();
+      var height = $(this).height();
+      //load 
+      var img = new Image(); //create a new image for measuring real dimenstions
       img.delay = 100; //100ms by default
       img.src = $(this).attr('src');
-      $(this).removeAttr('width').removeAttr('height'); //unset width to measure complete width
-      img.totalwidth = $(this).width();
+      $(img).attr("style","display: none;");
+      $(this).after(img,function() { console.log('appended');});
       $(this).attr('src',blank).css({background: 'url(' + img.src + ') no-repeat 0 0', 
-                                     width: img.width, height: img.height});
-      //FIXME: use actual image height and assume square if no explicit attributes exist.
-      //FIXME: need actual image width to get max offset value
+                                     width: width, height: height});
       //FIXME: read delay from the rel
       var image = this; //needs to be the actual DOM object
       setInterval(function() {
         var offset = $(image).css('background-position'); //x y in px
         var offset_x = offset.match(/([-]?[0-9]*)px ([-]?[0-9]*)px/)[1]; //integer
-        var newoffset_x = offset_x - img.width;
+        var newoffset_x = offset_x - width;
         //FIXME: check for max offset
-        newoffset_x = (newoffset_x<=-img.totalwidth)? 0 : newoffset_x;
+        newoffset_x = (newoffset_x<=-img.width)? 0 : newoffset_x;
         $(image).css('background-position', newoffset_x + "px 0");
       },img.delay);
+      $(img).remove();//remove the temp image 
     });
     return this;
   }
