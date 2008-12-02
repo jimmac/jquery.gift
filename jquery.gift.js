@@ -10,7 +10,7 @@
     $(this).each(function () {
       //replace the image with a blank we'll animate
       var width = $(this).width();
-      var height = $(this).height();
+      var height = $(this).height(); //if hieght attr is omitted, this returns bogus
       //load 
       var img = new Image(); //create a new image for measuring real dimenstions
       img.delay = 100; //100ms by default
