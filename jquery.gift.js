@@ -1,5 +1,7 @@
 // GIFT -- a jQuery plugin to use PNG RGBA tiled images as animations
 // (c) 2008 Jakub 'jimmac' Steiner & Garrett LeSage
+// Just like jQuery, GIFT is licensed under both MIT and GPL v2 licenses. 
+// Use the license that better applies to your project.
 
 (function ($) {
   $.fn.gift = function() {
@@ -18,8 +20,6 @@
       img.src = $(this).attr('src');
 
       $(img).attr("style","display: none;");
-
-      $(this).after(img, function(){ console.log('appended');});
 
       $(this).attr('src', blank).css({
         background: 'url(' + img.src + ') no-repeat 0 0',
